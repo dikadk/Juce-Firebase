@@ -8,8 +8,7 @@ But due to changes in latest Firebase iOS SDK. Tutorial required some additional
 
 This tutorial will show how to setup Analytics and Crashlytics
 
-Pre-requesits
-
+Pre-requisites:
 1. Download Firebase C++ SDK
 2. Download Firebase iOS Frameworks Zip ~1gb (https://firebase.google.com/docs/ios/setup)
 3. Build custom Projucer from Source.
@@ -29,6 +28,7 @@ So we have to make few changes to Xcode Exporter and build Projucer from Source.
    }
   ```
    This will ensure that we will be able to specify extension in Extra Custom Frameworks field in Project (aka. path/FirebaseAnAlytics.xcframework)
+   
 3. Build Projucer and open Juce Project using it
 
 Project Config:
@@ -92,3 +92,5 @@ Few useful debug arguments for XCode Schemas (Arguments passed on Launch):
 Links:
 Firebase C++ SDK Guide: https://firebase.google.com/docs/cpp/setup?platform=ios
 Firebase Setup without Cocaposds: https://firebase.google.com/docs/ios/setup
+
+Last updated Jul 17th 2020
