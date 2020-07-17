@@ -1,4 +1,4 @@
-# Juce-Firebase
+# Juce + Firebase C++ SDK IOS
 How to integrate Firebase C++ SDK into iOS JUCE app
 
 Based on https://forum.juce.com/t/juce-firebase-admob-lets-monetize-our-juce-ios-apps-with-ads-partial-how-to/29369/5
