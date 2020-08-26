@@ -78,11 +78,11 @@ Project Config:
       3. Custom XCode Flags: ```FRAMEWORK_SEARCH_PATHS="/Users/home/Documents/git_projects/Firebase/FirebaseAnalytics /Users/home/Documents/git_projects/Firebase/FirebaseCrashlytics /Users/home/Documents/git_projects/firebase_cpp_sdk/frameworks/ios/universal",
 GCC_GENERATE_DEBUGGING_SYMBOLS=YES,
 STRIP_INSTALLED_PRODUCT=NO,
-COPY_PHASE_STRIP=NO```
+COPY_PHASE_STRIP=NO,
+DEBUG_INFORMATION_FORMAT=dwarf-with-dsym```
 6. Export iOS project to XCode
 7. Make sure NEW BUILD system is selected ```File->ProjectSetting->New Build System```
-8. Under ```Project->Build Options->Debug Information Format``` change to ```DWARF with dSYM File``` (we will need these files to upload to Firebase for de-obfuscating crash reports)
-9. Build app and check Verify that app showed up in Analytics
+8. Build app and check Verify that app showed up in Analytics
 
 Few useful debug arguments for XCode Schemas (Arguments passed on Launch):
 ```-FIRAnalyticsDebugEnabled```
