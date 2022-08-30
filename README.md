@@ -10,7 +10,7 @@ This tutorial will show how to setup Analytics and Crashlytics
 
 Pre-requisites
 
-###IMPORTANT AUG 2022 Update
+### IMPORTANT AUG 2022 Update
 
 Due to changed in Firebase iOS SDK - it uses now swift binaries I didn't find any way to link it properly and make some with Projucer
 
@@ -18,7 +18,7 @@ So import to use Firebase 8.5.0
 https://github.com/firebase/firebase-ios-sdk/releases/tag/8.5.0
 https://github.com/firebase/firebase-cpp-sdk/releases/tag/v8.5.0
 
-#-------------------------------------------------------------------------------------
+# -----------------------
 
 1. Download Firebase C++ SDK
 2. Download Firebase iOS Frameworks Zip ~1gb (https://firebase.google.com/docs/ios/setup)
