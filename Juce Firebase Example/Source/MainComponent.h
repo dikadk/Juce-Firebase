@@ -1,6 +1,7 @@
 #pragma once
 
 #include <JuceHeader.h>
+#include "firebase/app.h"
 
 //==============================================================================
 /*
@@ -21,6 +22,7 @@ public:
 private:
     //==============================================================================
     // Your private member variables go here...
+    std::unique_ptr<firebase::App*> app;
 
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (MainComponent)

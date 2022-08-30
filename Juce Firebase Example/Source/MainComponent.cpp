@@ -3,6 +3,13 @@
 //==============================================================================
 MainComponent::MainComponent()
 {
+    auto options = firebase::AppOptions();
+    
+    options.set_app_id("1:1048421010400:ios:3702c9caad6f3cc7f4b985");
+    options.set_api_key("AIzaSyAyMk17qeuNnz7d7uUrtMQoMvrunGucKGc");
+    options.set_project_id("musicapp-a0d2f");
+    
+    app = std::make_unique<firebase::App*>(firebase::App::Create(options));
     setSize (600, 400);
 }
 
