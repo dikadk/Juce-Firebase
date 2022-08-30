@@ -8,7 +8,17 @@ But due to changes in latest Firebase iOS SDK. Tutorial required some additional
 
 This tutorial will show how to setup Analytics and Crashlytics
 
-Pre-requesits
+Pre-requisites
+
+###IMPORTANT AUG 2022 Update
+
+Due to changed in Firebase iOS SDK - it uses now swift binaries I didn't find any way to link it properly and make some with Projucer
+
+So import to use Firebase 8.5.0
+https://github.com/firebase/firebase-ios-sdk/releases/tag/8.5.0
+https://github.com/firebase/firebase-cpp-sdk/releases/tag/v8.5.0
+
+#-------------------------------------------------------------------------------------
 
 1. Download Firebase C++ SDK
 2. Download Firebase iOS Frameworks Zip ~1gb (https://firebase.google.com/docs/ios/setup)
@@ -55,34 +65,35 @@ Project Config:
       4. Extra System Frameworks: 
       ```CoreMotion, MediaPlayer, AdSupport, MessageUI, CoreServices, CoreTelephony, Security, StoreKit,    SystemConfiguration, UIKit, Foundation, CoreMedia, GLKit```
       1. Frameworkds Search Path: ```/Users/home/Documents/git_projects/Firebase/FirebaseAnalytics;
-/Users/home/Documents/git_projects/Firebase/FirebaseCrashlytics;```
-      2. Extra Custom Frameworks: ```/Users/home/Documents/git_projects/firebase_cpp_sdk/frameworks/ios/universal/firebase
-/Users/home/Documents/git_projects/firebase_cpp_sdk/frameworks/ios/universal/firebase_analytics
+/Users/home/Documents/git_projects/Firebase/FirebaseCrashlytics;
+/Users/home/Documents/git_projects/firebase_cpp_sdk/xcframeworks```
+      1. Extra Custom Frameworks: ```
 /Users/home/Documents/git_projects/Firebase/FirebaseCrashlytics/FirebaseCrashlytics.xcframework
-/Users/home/Documents/git_projects/Firebase/FirebaseAnalytics/FIRAnalyticsConnector.framework
-/Users/home/Documents/git_projects/Firebase/FirebaseAnalytics/FirebaseAnalytics.framework
+/Users/home/Documents/git_projects/Firebase/FirebaseAnalytics/FirebaseAnalytics.xcframework
 /Users/home/Documents/git_projects/Firebase/FirebaseAnalytics/FirebaseCore.xcframework
 /Users/home/Documents/git_projects/Firebase/FirebaseAnalytics/FirebaseCoreDiagnostics.xcframework
 /Users/home/Documents/git_projects/Firebase/FirebaseAnalytics/FirebaseInstallations.xcframework
-/Users/home/Documents/git_projects/Firebase/FirebaseAnalytics/GoogleAppMeasurement.framework
+/Users/home/Documents/git_projects/Firebase/FirebaseAnalytics/GoogleAppMeasurement.xcframework
 /Users/home/Documents/git_projects/Firebase/FirebaseAnalytics/GoogleDataTransport.xcframework
 /Users/home/Documents/git_projects/Firebase/FirebaseAnalytics/GoogleUtilities.xcframework
 /Users/home/Documents/git_projects/Firebase/FirebaseAnalytics/nanopb.xcframework
-/Users/home/Documents/git_projects/Firebase/FirebaseAnalytics/PromisesObjC.xcframework```
-       3. Keep Custom Xcode Schemas: ```Enabled```
+/Users/home/Documents/git_projects/Firebase/FirebaseAnalytics/PromisesObjC.xcframework
+/Users/home/Documents/git_projects/firebase_cpp_sdk/xcframeworks/firebase_analytics.xcframework
+/Users/home/Documents/git_projects/firebase_cpp_sdk/xcframeworks/firebase.xcframework```
    1. Debug/Release
       1. Header Search Paths: ```/Users/home/Documents/git_projects/Firebase/FirebaseAnalytics;
-/Users/home/Documents/git_projects/Firebase/FirebaseCrashlytics;```
+/Users/home/Documents/git_projects/Firebase/FirebaseCrashlytics;
+/Users/home/Documents/git_projects/firebase_cpp_sdk/xcframeworks```
       2. Extra Search Library Paths: ```/Users/home/Documents/git_projects/Firebase/FirebaseAnalytics;
-/Users/home/Documents/git_projects/Firebase/FirebaseCrashlytics;```
-      3. Custom XCode Flags: ```FRAMEWORK_SEARCH_PATHS="/Users/home/Documents/git_projects/Firebase/FirebaseAnalytics /Users/home/Documents/git_projects/Firebase/FirebaseCrashlytics /Users/home/Documents/git_projects/firebase_cpp_sdk/frameworks/ios/universal",
+/Users/home/Documents/git_projects/Firebase/FirebaseCrashlytics;
+/Users/home/Documents/git_projects/firebase_cpp_sdk/xcframeworks```
+      3. Custom XCode Flags: ```FRAMEWORK_SEARCH_PATHS="/Users/home/Documents/git_projects/Firebase/FirebaseAnalytics /Users/home/Documents/git_projects/Firebase/FirebaseCrashlytics /Users/home/Documents/git_projects/firebase_cpp_sdk/xcframeworks",
 GCC_GENERATE_DEBUGGING_SYMBOLS=YES,
 STRIP_INSTALLED_PRODUCT=NO,
 COPY_PHASE_STRIP=NO```
 6. Export iOS project to XCode
-7. Make sure NEW BUILD system is selected ```File->ProjectSetting->New Build System```
-8. Under ```Project->Build Options->Debug Information Format``` change to ```DWARF with dSYM File``` (we will need these files to upload to Firebase for de-obfuscating crash reports)
-9. Build app and check Verify that app showed up in Analytics
+7. Under ```Project->Build Options->Debug Information Format``` change to ```DWARF with dSYM File``` (we will need these files to upload to Firebase for de-obfuscating crash reports)
+8. Build app and check Verify that app showed up in Analytics
 
 Few useful debug arguments for XCode Schemas (Arguments passed on Launch):
 ```-FIRAnalyticsDebugEnabled```
