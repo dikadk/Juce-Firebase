@@ -78,19 +78,21 @@ Project Config:
 /Users/home/Documents/git_projects/Firebase/FirebaseAnalytics/PromisesObjC.xcframework
 /Users/home/Documents/git_projects/firebase_cpp_sdk/xcframeworks/firebase_analytics.xcframework
 /Users/home/Documents/git_projects/firebase_cpp_sdk/xcframeworks/firebase.xcframework
-
-$(SDKROOT)/usr/lib/swift;
-$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME);
-$(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME);
 ```
    1. Debug/Release
       1. Header Search Paths: ```/Users/home/Documents/git_projects/Firebase/FirebaseAnalytics;
 /Users/home/Documents/git_projects/Firebase/FirebaseCrashlytics;
 /Users/home/Documents/git_projects/firebase_cpp_sdk/xcframeworks```
-      2. Extra Search Library Paths: ```/Users/home/Documents/git_projects/Firebase/FirebaseAnalytics;
+      2. Extra Search Library Paths:
+```
+/Users/home/Documents/git_projects/Firebase/FirebaseAnalytics;
 /Users/home/Documents/git_projects/Firebase/FirebaseCrashlytics;
-/Users/home/Documents/git_projects/firebase_cpp_sdk/xcframeworks```
-      3. Custom XCode Flags:
+/Users/home/Documents/git_projects/firebase_cpp_sdk/xcframeworks
+$(SDKROOT)/usr/lib/swift;
+$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME);
+$(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME);
+```
+      4. Custom XCode Flags:
 ```
 FRAMEWORK_SEARCH_PATHS="/Users/home/Documents/git_projects/Firebase/FirebaseAnalytics /Users/home/Documents/git_projects/Firebase/FirebaseCrashlytics /Users/home/Documents/git_projects/firebase_cpp_sdk/xcframeworks",
 GCC_GENERATE_DEBUGGING_SYMBOLS=YES,
