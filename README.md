@@ -107,9 +107,13 @@ $(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME);
 ```
       4. Custom XCode Flags:
 ```
-GCC_GENERATE_DEBUGGING_SYMBOLS=YES,
-STRIP_INSTALLED_PRODUCT=NO,
-COPY_PHASE_STRIP=NO,
+GCC_GENERATE_DEBUGGING_SYMBOLS=YES, 
+GCC_DEBUGGING_SYMBOLS = full,  
+DEBUG_INFORMATION_FORMAT=dwarf-with-dsym,  
+DWARF_DSYM_FILE_NAME = "$(TARGET_NAME).dSYM",  
+DWARF_DSYM_FOLDER_PATH = "$(CONFIGURATION_BUILD_DIR)/dSyms",
+COPY_PHASE_STRIP=YES,
+CONFIGURATION_BUILD_DIR="$(inherited)",
 
 SWIFT_VERSION=5.0,
 SWIFT_OPTIMIZATION_LEVEL="-Onone",
@@ -120,6 +124,10 @@ ALWAYS_EMBED_SWIFT_STANDART_LIBRARIES=YES
 6. Export iOS project to XCode
 7. Under ```Project->Build Options->Debug Information Format``` change to ```DWARF with dSYM File``` (we will need these files to upload to Firebase for de-obfuscating crash reports)
 8. Build app and check Verify that app showed up in Analytics
+
+```
+/Users/home/Documents/git_projects/Firebase/FirebaseCrashlytics/upload-symbols -gsp /Users/home/JuceProjects/Pulsar-Projuser/Source/GoogleService-Info.plist -p ios "<path xcode archive>/dSyms/"
+```
 
 Few useful debug arguments for XCode Schemas (Arguments passed on Launch):
 ```-FIRAnalyticsDebugEnabled```
