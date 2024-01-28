@@ -13,7 +13,13 @@ Pre-requisites
 ### Last tested JAN 2023 Update
 
 https://github.com/firebase/firebase-ios-sdk/releases/tag/10.20.0
+
 https://github.com/firebase/firebase-cpp-sdk/releases/tag/v11.8.0
+
+Tested libraries:
+Analytics
+Crashlitics
+Push Notifications
 
 # -----------------------
 
@@ -66,26 +72,33 @@ Project Config:
 /Users/home/Documents/git_projects/firebase_cpp_sdk/xcframeworks```
       1. Extra Custom Frameworks:
 ```
-/Users/home/Documents/git_projects/Firebase/FirebaseCrashlytics/FirebaseCrashlytics.xcframework
+/Users/home/Documents/git_projects/Firebase/FirebaseAnalytics/FBLPromises.xcframework
 /Users/home/Documents/git_projects/Firebase/FirebaseAnalytics/FirebaseAnalytics.xcframework
 /Users/home/Documents/git_projects/Firebase/FirebaseAnalytics/FirebaseCore.xcframework
-/Users/home/Documents/git_projects/Firebase/FirebaseAnalytics/FirebaseCoreDiagnostics.xcframework
+/Users/home/Documents/git_projects/Firebase/FirebaseAnalytics/FirebaseCoreInternal.xcframework
 /Users/home/Documents/git_projects/Firebase/FirebaseAnalytics/FirebaseInstallations.xcframework
 /Users/home/Documents/git_projects/Firebase/FirebaseAnalytics/GoogleAppMeasurement.xcframework
-/Users/home/Documents/git_projects/Firebase/FirebaseAnalytics/GoogleDataTransport.xcframework
+/Users/home/Documents/git_projects/Firebase/FirebaseAnalytics/GoogleAppMeasurementIdentitySupport.xcframework
 /Users/home/Documents/git_projects/Firebase/FirebaseAnalytics/GoogleUtilities.xcframework
 /Users/home/Documents/git_projects/Firebase/FirebaseAnalytics/nanopb.xcframework
-/Users/home/Documents/git_projects/Firebase/FirebaseAnalytics/PromisesObjC.xcframework
+/Users/home/Documents/git_projects/Firebase/FirebaseCrashlytics/FirebaseCoreExtension.xcframework
+/Users/home/Documents/git_projects/Firebase/FirebaseCrashlytics/FirebaseCrashlytics.xcframework
+/Users/home/Documents/git_projects/Firebase/FirebaseCrashlytics/FirebaseSessions.xcframework
+/Users/home/Documents/git_projects/Firebase/FirebaseCrashlytics/PromisesSwift.xcframework
 /Users/home/Documents/git_projects/firebase_cpp_sdk/xcframeworks/firebase_analytics.xcframework
 /Users/home/Documents/git_projects/firebase_cpp_sdk/xcframeworks/firebase.xcframework
+/Users/home/Documents/git_projects/Firebase/FirebaseMessaging/FirebaseMessaging.xcframework
+/Users/home/Documents/git_projects/Firebase/FirebaseMessaging/GoogleDataTransport.xcframework
 ```
    1. Debug/Release
       1. Header Search Paths: ```/Users/home/Documents/git_projects/Firebase/FirebaseAnalytics;
 /Users/home/Documents/git_projects/Firebase/FirebaseCrashlytics;
+/Users/home/Documents/git_projects/Firebase/FirebaseMessaging/FirebaseMessaging;
 /Users/home/Documents/git_projects/firebase_cpp_sdk/xcframeworks```
-      2. Extra Search Library Paths:
+      3. Extra Search Library Paths:
 ```
 /Users/home/Documents/git_projects/Firebase/FirebaseAnalytics;
+/Users/home/Documents/git_projects/Firebase/FirebaseMessaging;
 /Users/home/Documents/git_projects/Firebase/FirebaseCrashlytics;
 /Users/home/Documents/git_projects/firebase_cpp_sdk/xcframeworks
 $(SDKROOT)/usr/lib/swift;
@@ -94,7 +107,6 @@ $(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME);
 ```
       4. Custom XCode Flags:
 ```
-FRAMEWORK_SEARCH_PATHS="/Users/home/Documents/git_projects/Firebase/FirebaseAnalytics /Users/home/Documents/git_projects/Firebase/FirebaseCrashlytics /Users/home/Documents/git_projects/firebase_cpp_sdk/xcframeworks",
 GCC_GENERATE_DEBUGGING_SYMBOLS=YES,
 STRIP_INSTALLED_PRODUCT=NO,
 COPY_PHASE_STRIP=NO,
